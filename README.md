@@ -22,13 +22,15 @@
 
 ## 3. CODE STM32:
 
- * **Variable Declarations:**
+ * **VARIABLE DECLARATOINS:** 
 
 ```cpp
 char tx_data[] = "Message from STM32F401 ... \r\n";  
 uint32_t previousMillis = 0; /* STORE LAST TRANSMISSION TIME */  
 const int interval = 100;    /* INTERVAL FOR SENDING DATA 1 SECOND */
 ```
+
+ 1. **`char tx_data[]`**: This character array holds the string that will be transmitted via UART. The string includes a newline character (`\r\n`) at the end, which is common in serial communication to indicate the end of a message.
 
    ![STM32 Communication UART To ESP32 (4)](https://github.com/user-attachments/assets/7f73faf4-990f-4a3f-b805-a679fbbe8686)
 
