@@ -71,10 +71,10 @@ The parity bit can only detect a single flipped bit. If more than one bit is fli
 
 >[!SUMMARY:]
 > * UART stands for universal asynchronous receiver / transmitter and is a simple, two-wire protocol for exchanging serial data.
-* Asynchronous means no shared clock, so for UART to work, the same bit or baud rate must be configured on both sides of the connection.
-* Start and stop bits are used to indicate where user data begins and ends, or to “frame” the data.
-* An optional parity bit can be used to detect single bit errors.
-* UART is still a widely used serial data protocol but has been replaced in some applications by technologies such as SPI, I2C, USB, and Ethernet in recent years.
+> * Asynchronous means no shared clock, so for UART to work, the same bit or baud rate must be configured on both sides of the connection.
+> * Start and stop bits are used to indicate where user data begins and ends, or to “frame” the data.
+> * An optional parity bit can be used to detect single bit errors.
+> * UART is still a widely used serial data protocol but has been replaced in some applications by technologies such as SPI, I2C, USB, and Ethernet in recent years.
 
 ## 2. STM32 F401:
 
