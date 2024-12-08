@@ -24,14 +24,8 @@ One of the big advantages of UART is that it is asynchronous – the transmitter
  **UART FRAME FORMAT**
 
 <div align="center">  
-    <img src="https://github.com/user-attachments/assets/e2b5dd14-2d6b-45c1-908e-b8ffae5a2fa7" alt="Description of the image" />  
+    <img src="https://github.com/user-attachments/assets/a632aedb-04ac-4e49-9ebe-59d4d43fd37b" alt="Description of the image" />  
 </div>
-
-
-![image](https://github.com/user-attachments/assets/e2b5dd14-2d6b-45c1-908e-b8ffae5a2fa7)
-
-![image](https://github.com/user-attachments/assets/a632aedb-04ac-4e49-9ebe-59d4d43fd37b)
-
 
 
 
