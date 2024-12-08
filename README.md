@@ -1,6 +1,17 @@
 ## I. STM32 F01 Communication UART To ESP32
 
-## 1. UART:
+## 1. UART (Universal Asynchronous Receiver / Tansmitter):
+
+ **WHAT IS UART?**
+
+UART stands for **universal asynchronous receiver / transmitter** and defines a protocol, or set of rules, for exchanging serial data between two devices. UART is very simple and only uses two wires between transmitter and receiver to transmit and receive in both directions. Both ends also have a ground connection. Communication in UART can be **simplex** (data is sent in one direction only), **half-duplex** (each side speaks but only one at a time), or **full-duplex** (both sides can transmit simultaneously). Data in UART is transmitted in the form of frames. The format and content of these frames is briefly described and explained.
+
+<div align="center">  
+    <img src="https://github.com/user-attachments/assets/43017255-f31f-43a1-8d31-1e6d6661c8ef" alt="Description of the image" />  
+</div>
+
+![image]()
+
 
 ## 2. STM32 F401:
 
