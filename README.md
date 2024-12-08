@@ -10,7 +10,26 @@ UART stands for **universal asynchronous receiver / transmitter** and defines a 
     <img src="https://github.com/user-attachments/assets/43017255-f31f-43a1-8d31-1e6d6661c8ef" alt="Description of the image" />  
 </div>
 
-![image]()
+
+ **WHERE IS UART USED?**
+
+UART was one of the earliest serial protocols. The once ubiquitous serial ports are almost always UART-based, and devices using RS-232 interfaces, external modems, etc. are common examples of where UART is used.
+In recent years, the popularity of UART has decreased: protocols like SPI and I2C have been replacing UART between chips and components. Instead of communicating over a serial port, most modern computers and peripherals now use technologies like Ethernet and USB. However, UART is still used for lower-speed and lower-throughput applications, because it is very simple, low-cost and easy to implement.
+
+
+ **TIMING AND SYNCHRONIZATION OF UART PROTOCOLS**
+
+One of the big advantages of UART is that it is asynchronous – the transmitter and receiver do not share a common clock signal. Although this greatly simplifies the protocol, it does place certain requirements on the transmitter and receiver. Since they do not share a clock, both ends must transmit at the same, pre-arranged speed in order to have the same bit timing. The most common UART baud rates in use today are 4800, 9600, 19.2K, 57.6K, and 115.2K. In addition to having the same baud rate, both sides of a UART connection also must use the same frame structure and parameters. The best way to understand this is to look at a UART frame.
+
+ **UART FRAME FORMAT**
+
+<div align="center">  
+    <img src="https://github.com/user-attachments/assets/e2b5dd14-2d6b-45c1-908e-b8ffae5a2fa7" alt="Description of the image" />  
+</div>
+
+
+![image](https://github.com/user-attachments/assets/e2b5dd14-2d6b-45c1-908e-b8ffae5a2fa7)
+
 
 
 ## 2. STM32 F401:
