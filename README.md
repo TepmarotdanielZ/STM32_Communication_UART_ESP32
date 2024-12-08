@@ -28,7 +28,7 @@ One of the big advantages of UART is that it is asynchronous – the transmitter
 </div>
 
 >[!UART:]
->frames contain start and stop bits, data bits, and an optional parity bit, which will be explained below.
+> frames contain start and stop bits, data bits, and an optional parity bit, which will be explained below.
 
 As with most digital systems, a “high” voltage level is used to indicate a logical “1” and a “low” voltage level is used to indicate a logical “0”. Since the UART protocol doesn’t define specific voltages or voltage ranges for these levels, sometimes high is also called “mark” while low is called “space”. Note that in the idle state (where no data is being transmitted), the line is held high. This allows an easy detection of a damaged line or transmitter.
 
@@ -52,6 +52,29 @@ If we want to send the capital letter “S” in 7-bit ASCII, the bit sequence i
     <img src="https://github.com/user-attachments/assets/a50c5055-921b-4937-b0ab-c47fb039cea6" alt="Description of the image" />  
 </div>
 
+
+**PARITY BIT:**
+
+A UART frame can also contain an optional parity bit that can be used for error detection. This bit is inserted between the end of the data bits and the stop bit. The value of the parity bit depends on the type of parity being used (even or odd):
+
+* In **even parity**, this bit is set such that the total number of 1s in the frame will be even.
+* In **odd parity**, this bit is set such that the total number of 1s in the frame will be odd.
+  
+**Example:**
+Capital “S” (1 0 1 0 0 1 1) contains a total of three zeros and 4 ones. If using even parity, the parity bit is zero because there already is an even number of ones. If using odd parity, then the parity bit has to be one in order to make the frame have an odd number of 1s.
+The parity bit can only detect a single flipped bit. If more than one bit is flipped, there’s no way to reliably detect these using a single parity bit.
+
+<div align="center">  
+    <img src="https://github.com/user-attachments/assets/f5ce8a1c-2c09-4b52-ae54-c363dd6d407d" alt="Description of the image" />  
+</div>
+
+
+>[!SUMMARY:]
+> * UART stands for universal asynchronous receiver / transmitter and is a simple, two-wire protocol for exchanging serial data.
+* Asynchronous means no shared clock, so for UART to work, the same bit or baud rate must be configured on both sides of the connection.
+* Start and stop bits are used to indicate where user data begins and ends, or to “frame” the data.
+* An optional parity bit can be used to detect single bit errors.
+* UART is still a widely used serial data protocol but has been replaced in some applications by technologies such as SPI, I2C, USB, and Ethernet in recent years.
 
 ## 2. STM32 F401:
 
