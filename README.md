@@ -24,7 +24,7 @@
 
  * **Variable Declarations:**
 
-```
+```cpp
 char tx_data[] = "Message from STM32F401 ... \r\n";  
 uint32_t previousMillis = 0; /* STORE LAST TRANSMISSION TIME */  
 const int interval = 100;    /* INTERVAL FOR SENDING DATA 1 SECOND */
