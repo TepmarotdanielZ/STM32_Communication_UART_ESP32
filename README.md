@@ -17,16 +17,40 @@ UART was one of the earliest serial protocols. The once ubiquitous serial ports 
 In recent years, the popularity of UART has decreased: protocols like SPI and I2C have been replacing UART between chips and components. Instead of communicating over a serial port, most modern computers and peripherals now use technologies like Ethernet and USB. However, UART is still used for lower-speed and lower-throughput applications, because it is very simple, low-cost and easy to implement.
 
 
- **TIMING AND SYNCHRONIZATION OF UART PROTOCOLS**
+ **TIMING AND SYNCHRONIZATION OF UART PROTOCOLS:**
 
 One of the big advantages of UART is that it is asynchronous – the transmitter and receiver do not share a common clock signal. Although this greatly simplifies the protocol, it does place certain requirements on the transmitter and receiver. Since they do not share a clock, both ends must transmit at the same, pre-arranged speed in order to have the same bit timing. The most common UART baud rates in use today are 4800, 9600, 19.2K, 57.6K, and 115.2K. In addition to having the same baud rate, both sides of a UART connection also must use the same frame structure and parameters. The best way to understand this is to look at a UART frame.
 
- **UART FRAME FORMAT**
+ **UART FRAME FORMAT:**
 
 <div align="center">  
     <img src="https://github.com/user-attachments/assets/a632aedb-04ac-4e49-9ebe-59d4d43fd37b" alt="Description of the image" />  
 </div>
 
+>[!UART:]
+>frames contain start and stop bits, data bits, and an optional parity bit, which will be explained below.
+
+As with most digital systems, a “high” voltage level is used to indicate a logical “1” and a “low” voltage level is used to indicate a logical “0”. Since the UART protocol doesn’t define specific voltages or voltage ranges for these levels, sometimes high is also called “mark” while low is called “space”. Note that in the idle state (where no data is being transmitted), the line is held high. This allows an easy detection of a damaged line or transmitter.
+
+ **START AND STOP BITS:**
+
+Because UART is asynchronous, the transmitter needs to signal that data bits are coming. This is accomplished by using the start bit. The start bit is a transition from the idle high state to a low state, and immediately followed by user data bits.
+After the data bits are finished, the stop bit indicates the end of user data. The stop bit is either a transition back to the high or idle state or remaining at the high state for an additional bit time. A second (optional) stop bit can be configured, usually to give the receiver time to get ready for the next frame, but this is uncommon in practice.
+
+
+**DATA BITS:**
+
+The data bits are the user data or “useful” bits and come immediately after the start bit. There can be 5 to 9 user data bits, although 7 or 8 bits is most common. These data bits are usually transmitted with the least significant bit first.
+
+**Example:**
+If we want to send the capital letter “S” in 7-bit ASCII, the bit sequence is 1 0 1 0 0 1 1. We first reverse the order of the bits to put them in least significant bit order, that is 1 1 0 0 1 0 1, before sending them out. After the last data bit is sent, the stop bit is used to end the frame and the line returns to the idle state.
+
+* 7-bit ASCII ‘S’ (0x52) = 1 0 1 0 0 1 1
+* LSB order = 1 1 0 0 1 0 1
+
+<div align="center">  
+    <img src="https://github.com/user-attachments/assets/a50c5055-921b-4937-b0ab-c47fb039cea6" alt="Description of the image" />  
+</div>
 
 
 ## 2. STM32 F401:
